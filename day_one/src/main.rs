@@ -14,12 +14,9 @@ fn calc(input: Vec<i32>) -> (i32, i32) {
             if a + b == 2020{
                  x = a * b;
             }
-            if check {
-                break;
-            }
-            
+
             for c in input.iter().skip(i+1) {
-                if a + b + c == 2020 {
+                if a + b + c == 2020 && !check {
                     y = a * b * c; 
                     check = true;
                     break;
