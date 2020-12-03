@@ -21,10 +21,7 @@ fn main() {
             ((b <= n && n <= a) as usize,
             ((pass.chars().nth(a - 1).unwrap() == key) ^ (pass.chars().nth(b - 1).unwrap() == key)) as usize)
         })
-        .fold(|| (0, 0), |z, (x, y)| {
-            (z.0 + x,
-            z.1 + y)
-        })
+        .fold(|| (0, 0), |z, (x, y)| (z.0 + x, z.1 + y))
         .reduce(||(0, 0), |a, (x,y)| (a.0 + x, a.1 + y));
     println!("part one: {} \npart two: {}", part_one, part_two);
 }
